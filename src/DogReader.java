@@ -11,7 +11,12 @@ public class DogReader {
      * @param name
      * @return
      */
-    public static DogBreed finDogBreed(String name){
-
+    public static DogBreed findDogBreed(String name){
+        for (DogBreed breed : dogBreeds){
+            if (breed.getName().equalsIgnoreCase(name)){
+                return breed;
+            }
+        }
+        return null;
     }
 }

@@ -22,13 +22,12 @@
 ## Math
 We fit the dog weight quartiles to a bell curve, so the equation relating to user interaction is $z=\frac{x-\mu}{\sigma}$.<br>
 It is also important to know that you can convert a percentile (i.e. fatter than 70% of dogs) to a z score via a non analytic function.<br>
-This is implemented via someone elses java class, see credits.<br>
+This is implemented via an approximation, see credits.<br>
 Assume $\text{min}$ represents the 1st quartile dog weight, and $\text{max}$ represents the 3rd quartile dog weight.
 We know $75% \implies z = 0.674$. We also know the mean $\mu = \frac{\text{max}-\text{min}}{2}$<br>
 Therefore, plugging in the 75th percentile, $0.674=\frac{\text{max}-\frac{\text{max}+\text{min}}{2}}{\sigma} = \frac{\text{max}-\text{min}}{2\sigma}$.<br>
 We can then solve for the standard distribution. $\sigma = \frac{\text{max}-\text{min}}{1.348}$.<br>
-From there, we can plug our variables into into the bell curve equation, $f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$<br>
-Or alternatively, we can calculate our z score with the above formula and convert it into a percentile with the java class linked<br>
+From there, we can plug our variables into the bell curve equation, $f(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}$<br>
+Or alternatively, we can calculate our z score with the relevant formula and convert it into a percentile with the java class linked<br>
 ## Credits
 - [Dog weight quartiles by sex](https://www.akc.org/expert-advice/nutrition/breed-weight-chart/)
-- [Z score from percentile](https://gist.github.com/moxprox/8583bd5bb432f063afc6#file-zscoreconverter-java)

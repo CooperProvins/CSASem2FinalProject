@@ -8,5 +8,9 @@ public class Main {
         int dogWeight;
         Sex dogSex;
         String dogBreed;
+
+        for (int i = 0; i < 8; i++){
+            System.out.println(PortionGenerator.getPortion());
+        }
     }
 }
