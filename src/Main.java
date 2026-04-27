@@ -1,3 +1,6 @@
+
+import java.util.Scanner;
+
 public class Main {
     /**
      * console program that receives user input for dog breed, sex, weight
@@ -8,10 +11,20 @@ public class Main {
         // define variables that defines user's dog
         int dogWeight;
         Sex dogSex;
-        String dogBreed;
+        String dogBreedInput;
 
-        for (int i : new int[10]){
-            System.out.println(PortionGenerator.getPortion());
-        }
+        DogBreed dogBreed;
+
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("What breed is your dog?");
+        dogBreedInput = input.nextLine();
+        dogBreed = DogReader.findDogBreed(dogBreedInput);
+        System.out.println(dogBreed);
+        System.out.println("What sex is your dog?");
+        dogSex = Sex.parse(input.nextLine());
+        System.out.println("What is your dog's weight? (lbs)");
+        dogWeight = input.nextInt();
+
     }
 }

@@ -37,6 +37,7 @@ public class PortionGenerator {
         int measurementType = (int)(Math.random()*measurements.length);
         int amount = (int)(Math.pow(2, measurementType + 1)*abundance+1);
         String measurement = measurements[measurementType];
+        // adds an s to the blank measurement if the int amount is greater than 1
         if (amount>1){
             measurement += "s";
         }

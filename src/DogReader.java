@@ -22,7 +22,6 @@ public class DogReader {
             scanner = new Scanner(new File(fileName));
         }
         catch (FileNotFoundException e){
-            e.printStackTrace();
             scanner = null;
         }
         header = scanner.nextLine();
@@ -35,11 +34,17 @@ public class DogReader {
             );
         }
     }
+    /**
+     * prints a string representation of each of the dog in the dogBreed list
+     */
     public static void printList(){
         for (DogBreed dog : dogBreeds){
             dog.print();
         }
     }
+    /**
+     * @return ArrayList<DogBreed> list of all dogBreeds read from DogBreedWeightData.csv
+     */
     public static ArrayList<DogBreed> getDogBreeds() {
         return dogBreeds;
     }

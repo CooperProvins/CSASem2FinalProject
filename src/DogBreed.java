@@ -16,6 +16,9 @@ public class DogBreed {
         this.breedName = breedName;
     }
 
+    /**
+     * @return String representation of DogBreed
+     */
     @Override
     public String toString(){
         return "\t" + breedName + "\n\t\t mWeights:" + mWeights[0] + "-" + mWeights[1] + "\n\t\t fWeights:" + fWeights[0] + "-" + fWeights[1];
@@ -34,6 +37,7 @@ public class DogBreed {
     public double bellCurve(Sex sex, int weight){
         return (1 / (sigma * Math.sqrt(2 * Math.PI))) * Math.exp(-Math.pow(weight - mean, 2) / (2 * sigma * sigma));
     }
+
     /**
      * returns percentile of the dog weight
      * @param sex
@@ -68,6 +72,11 @@ public class DogBreed {
         return 0.5 * (1 + erf(zScore / Math.sqrt(2)));
     }
 
+    /**
+     * Approximation of mathmatical error function, porportional to the antiderivative of bell curve
+     * @param x input to error function
+     * @return double output of input x into approximation of error function
+     */
     // Approximation of the error function (erf)
     private static double erf(double x) {
         double t = 1.0 / (1.0 + 0.5 * Math.abs(x));
@@ -86,6 +95,9 @@ public class DogBreed {
         return x >= 0 ? 1 - tau : tau - 1;
     }
 
+    /**
+     * @return String name of dogBreed
+     */
     public String getName() {
         return breedName;
     }
