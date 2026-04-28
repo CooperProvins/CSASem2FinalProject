@@ -1,7 +1,7 @@
 # FatDog
 ## Overview
 ### Function
-- App will take user dog type and weight input, then calculate percentile, generate dog insult and recommended portion
+- App will take user dog breed and weight input, then calculate percentile, generate dog insult and recommended portion
 ### User
 - Owners of fat dogs
 ### Need

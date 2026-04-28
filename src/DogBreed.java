@@ -101,4 +101,33 @@ public class DogBreed {
     public String getName() {
         return breedName;
     }
+
+    /**
+     * @return int[] female weight quartiles for this dogBreed
+     */
+    public int[] getfWeights() {
+        return fWeights;
+    }
+
+    /**
+     * @return int[] male weight quartiles for this dogBreed
+     */
+    public int[] getmWeights() {
+        return mWeights;
+    }
+
+    /**
+     * @param mWeights new male weight quartiles for this dogBreed
+     */
+    public void setmWeights(int[] mWeights) {
+        this.mWeights = mWeights;
+    }
+
+    /**
+     * @param fWeights new female weight quartiles for this dogBreed
+     */
+    public void setfWeights(int[] fWeights) {
+        this.fWeights = fWeights;
+    }
+
 }

@@ -1,6 +1,7 @@
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -27,11 +28,24 @@ public class DogReader {
         header = scanner.nextLine();
         while (scanner.hasNext()){
             String[] parts = scanner.nextLine().split(",");
-            dogBreeds.add(
-                new DogBreed(
-                    parts[0], new int[]{Integer.parseInt(parts[1]),Integer.parseInt(parts[2])}, new int[]{Integer.parseInt(parts[3]),Integer.parseInt(parts[4])}
-                )
-            );
+            DogBreed dogBreed = new DogBreed(
+                    parts[0],
+                    new int[]{
+                        Integer.parseInt(parts[1]),
+                        Integer.parseInt(parts[2])},
+                    new int[]{
+                        Integer.parseInt(parts[3]),
+                        Integer.parseInt(parts[4])}
+                );
+            if (Arrays.equals(dogBreed.getfWeights(), dogBreed.getmWeights())){
+                dogBreed.setfWeights(
+                    new int[] {
+                        (int)(dogBreed.getmWeights()[0]*0.9),
+                        (int)(dogBreed.getmWeights()[1]*0.9)
+                    }
+                );
+            }
+            dogBreeds.add(dogBreed);
         }
     }
     /**
