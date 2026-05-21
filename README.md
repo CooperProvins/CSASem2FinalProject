@@ -1,5 +1,6 @@
 # FatDog
 ## Overview
+See [android app version](https://github.com/CooperProvins/FatDogApp)
 ### Function
 - App will take user dog breed and weight input, then calculate percentile, generate dog insult and recommended portion
 ### User
